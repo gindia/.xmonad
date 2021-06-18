@@ -12,7 +12,10 @@ main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
     xmonad $ docks def
         { modMask            = mod4Mask         -- superkey (WIN key)
-        , manageHook         = manageDocks <+> manageHook def
+        , manageHook         = manageDocks <+> manageHook def <+> composeAll
+            [ className =? "demo" --> doFloat
+            , title     =? "demo" --> doFloat
+            ]
         , layoutHook         = avoidStruts  $  layoutHook def
 
         , handleEventHook    = handleEventHook def <+> docksEventHook
