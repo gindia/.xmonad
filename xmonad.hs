@@ -24,7 +24,9 @@ main = do
         , normalBorderColor  = "#000000"
         , focusedBorderColor = "#3979C6"
         , borderWidth        = 2
-        , startupHook        = setWMName "LG3D" -- for java applications
+        , startupHook        = do
+            setWMName "LG3D" -- for java applications
+            spawn "~/.config/startup_power_manager.sh"
         , logHook            = workspaceNamesPP xmobarPP
             { ppOutput = hPutStrLn xmproc
             , ppTitle = id
