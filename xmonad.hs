@@ -1,6 +1,8 @@
 import XMonad
 import XMonad.Hooks.SetWMName
 
+import XMonad.Util.SpawnOnce
+
 -- XMobar hooks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
@@ -26,7 +28,7 @@ main = do
         , borderWidth        = 2
         , startupHook        = do
             setWMName "LG3D" -- for java applications
-            spawn "~/.config/startup_power_manager.sh"
+            spawnOnce "xfce4-power-manager --daemon"
         , logHook            = workspaceNamesPP xmobarPP
             { ppOutput = hPutStrLn xmproc
             , ppTitle = id
