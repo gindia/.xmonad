@@ -2,6 +2,7 @@ import XMonad
 import XMonad.Hooks.SetWMName
 
 import XMonad.Util.SpawnOnce
+import XMonad.Hooks.ManageHelpers
 
 -- XMobar hooks
 import XMonad.Hooks.DynamicLog
@@ -14,9 +15,11 @@ main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
     xmonad $ docks def
         { modMask            = mod4Mask         -- superkey (WIN key)
+        , workspaces         = ["1:main", "2:side", "3:media", "4", "5", "6"]
         , manageHook         = manageDocks <+> manageHook def <+> composeAll
-            [ className =? "demo" --> doFloat
-            , title     =? "demo" --> doFloat
+            [ title     =? "demo" --> doCenterFloat
+            -- , title     =? "demo" --> doShift "2:side"
+            , className =? "demo" --> doCenterFloat
             ]
         , layoutHook         = avoidStruts  $  layoutHook def
 
