@@ -25,7 +25,7 @@ main = do
 
         , handleEventHook    = handleEventHook def <+> docksEventHook
 
-        , terminal           = "alacritty"
+        , terminal           = "kitty"
         , normalBorderColor  = "#000000"
         , focusedBorderColor = "#3979C6"
         , borderWidth        = 2
