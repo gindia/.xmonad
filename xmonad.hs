@@ -19,7 +19,7 @@ main = do
         , manageHook         = manageDocks <+> manageHook def <+> composeAll
             [ title     =? "demo" --> doCenterFloat
             -- , title     =? "demo" --> doShift "2:side"
-            , className =? "demo" --> doCenterFloat
+            -- , className =? "demo" --> doCenterFloat
             ]
         , layoutHook         = avoidStruts  $  layoutHook def
 
