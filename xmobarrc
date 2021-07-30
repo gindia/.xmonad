@@ -31,4 +31,4 @@ Config { font = "-misc-fixed-*-*-*-*-12-*-*-*-*-*-*-*"
         ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ TGPU: %tgpu% | TCPU: %tcpu% | %dynnetwork% | %cpu% | %memory% | <fc=#ee9a00>%date%</fc>" }
+       , template = "%StdinReader% }{ %dynnetwork% | TGPU: %tgpu% | TCPU: %tcpu% | %cpu% | %memory% | <fc=#ee9a00>%date%</fc>" }
